@@ -1,0 +1,33 @@
+.container {
+  background-color: whitesmoke;
+  display: flex;
+  padding: 4rem 2rem;
+}
+.controls {
+  border-right: 1px solid rgba(175, 174, 174, 0.722);
+  padding: 0 4rem 0 2rem;
+  margin-right: 2rem;
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  &__itemContainer {
+    display: flex;
+    gap: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+  }
+}
+
+.itemList {
+  flex: 5;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}

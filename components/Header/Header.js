@@ -5,7 +5,7 @@ import logo from "../../assets/logo/Apparel.svg";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import style from "../../styles/components/header/Header.module.scss";
+import style from "./Header.module.scss";
 
 function header() {
   return (

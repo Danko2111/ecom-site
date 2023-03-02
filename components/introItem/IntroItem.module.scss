@@ -1,0 +1,17 @@
+.item {
+  flex: 1;
+  padding: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__itemWrapper {
+    width: fit-content;
+  }
+  &__category {
+    color: grey;
+  }
+  &__price {
+    margin-top: 0.5rem;
+    font-weight: bold;
+  }
+}

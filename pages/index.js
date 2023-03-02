@@ -1,4 +1,5 @@
 import Hero from "@/components/hero/Hero";
+import IntroItems from "@/components/introItems/IntroItems";
 import Head from "next/head";
 import Header from "../components/header/header";
 
@@ -14,6 +15,7 @@ export default function Home() {
       <main className="">
         <Header />
         <Hero />
+        <IntroItems />
       </main>
     </>
   );
