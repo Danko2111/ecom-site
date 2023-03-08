@@ -1,0 +1,44 @@
+.newProduct {
+  height: 50vh;
+  background-image: url("../../assets/images/newProductImage.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 20%;
+  background-color: black;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  &__text {
+    margin: 0 10% 0 auto;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 2rem;
+    color: white;
+  }
+  &__subtitle {
+    text-transform: uppercase;
+    font-size: 3rem;
+    color: white;
+  }
+  &__ctaButton {
+    max-width: 250px;
+    text-align: center;
+    margin-top: 1.5rem;
+    background-color: white;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.25rem;
+    border-radius: 2px;
+    color: black;
+    padding: 1.5rem 4rem;
+    cursor: pointer;
+    &:hover {
+      color: #f1a759;
+    }
+  }
+}
