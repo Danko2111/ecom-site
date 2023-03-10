@@ -1,9 +1,11 @@
 .newsletterWrapper {
+  position: relative;
   background-color: rgb(6, 6, 6);
   display: flex;
   align-items: center;
   gap: 1rem;
   padding: 4rem 5rem;
+  box-shadow: 0px 0px 10px 2px #484848;
 }
 .form {
   display: flex;

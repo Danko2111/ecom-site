@@ -12,7 +12,7 @@ function IntroItem({ item }) {
           src={itemImage}
           alt="Thumbnail for an item"
         ></Image>
-        <p className={style.item__category}>{item.category}</p>
+        <p className={style.item__subtitle}>Shop Now</p>
         <p className={style.item__name}>{item.name}</p>
         <p className={style.item__price}>${item.price}</p>
       </div>
