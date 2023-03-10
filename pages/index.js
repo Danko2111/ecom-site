@@ -1,5 +1,6 @@
-import CtaBanner from "@/components/CtaBanner/CtaBanner";
+import CtaBanner from "@/components/ctaBanner/CtaBanner";
 import DiscountSection from "@/components/discountSection/DiscountSection";
+import Footer from "@/components/footer/footer";
 import Hero from "@/components/hero/Hero";
 import IntroItems from "@/components/introItems/IntroItems";
 import NewProducts from "@/components/newProducts/NewProducts";
@@ -23,6 +24,7 @@ export default function Home() {
         <DiscountSection />
         <CtaBanner />
       </main>
+      <Footer />
     </>
   );
 }

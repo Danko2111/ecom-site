@@ -1,0 +1,113 @@
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(20, 20, 20);
+  padding-top: 2rem;
+  &__main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 3rem 4rem;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  &__logo {
+    height: 20px;
+    width: 50px;
+  }
+  &__cta {
+    text-transform: uppercase;
+    color: white;
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+  }
+  &__number {
+    text-transform: uppercase;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  &__links {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+  }
+  &__account,
+  &__about {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+  }
+  &__link {
+    width: fit-content;
+    color: white;
+    margin-top: 1rem;
+    color: rgb(111, 111, 111);
+    border-bottom: 1px solid rgb(20, 20, 20);
+    &:hover {
+      border-bottom: 1px solid rgb(111, 111, 111);
+    }
+  }
+  &__copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(111, 111, 111);
+    padding: 2rem 3rem;
+  }
+  &__copyrightText {
+    margin: 0 auto;
+  }
+  &__scrollButton {
+    background-color: rgb(111, 111, 111);
+    padding: 0.8rem;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(111, 111, 111);
+    &:hover {
+      border: 1px solid #f1a759;
+      .footerLinks__scrollButtonIcon {
+        animation: buttonBounce 0.8s linear infinite;
+      }
+    }
+  }
+  &__scrollButtonIcon {
+    height: 20px;
+    width: 20px;
+    transition: transform 0.25s linear;
+  }
+}
+
+@keyframes buttonBounce {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-2.5px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(2.5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
