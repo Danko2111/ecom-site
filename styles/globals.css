@@ -5,4 +5,8 @@
   text-decoration: none;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+html {
+  scroll-behavior: smooth;
 }

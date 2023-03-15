@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import IntroItem from "../introItem/IntroItem";
 import style from "./IntroItems.module.scss";
 
-function IntroItems() {
+function IntroItems({ handleCartUpdate }) {
   const itemsArr = [
     {
       category: ["Exercise", "all", "men"],
@@ -128,7 +128,11 @@ function IntroItems() {
         {itemsArr
           .filter((item) => item.category.includes(categorySort))
           .map((item, i) => (
-            <IntroItem key={i} item={item} />
+            <IntroItem
+              key={i}
+              item={item}
+              handleCartUpdate={handleCartUpdate}
+            />
           ))}
       </ul>
     </section>

@@ -5,9 +5,15 @@ import Hero from "@/components/hero/Hero";
 import IntroItems from "@/components/introItems/IntroItems";
 import NewProducts from "@/components/newProducts/NewProducts";
 import Head from "next/head";
+import { useState } from "react";
 import Header from "../components/header/header";
 
 export default function Home() {
+  const [cart, setCart] = useState([]);
+
+  const handleCartUpdate = (newItem) => {
+    setCart((prevCart) => [...prevCart, newItem]);
+  };
   return (
     <>
       <Head>
@@ -16,10 +22,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      <Header cartCount={cart.length} />
       <main className="">
         <Hero />
-        <IntroItems />
+        <IntroItems handleCartUpdate={handleCartUpdate} />
         <NewProducts />
         <DiscountSection />
         <CtaBanner />

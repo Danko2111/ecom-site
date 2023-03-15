@@ -98,3 +98,20 @@
     gap: 3rem;
   }
 }
+.cartIcon {
+  position: relative;
+}
+.cartCounter {
+  position: absolute;
+  top: -5px;
+  right: -3px;
+  font-size: 0.6rem;
+  color: black;
+  background-color: #f1a759;
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -7,7 +7,7 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import style from "./Header.module.scss";
 
-function header() {
+function header({ cartCount }) {
   return (
     <header className={style.header}>
       <nav className={style.navbar}>
@@ -119,9 +119,9 @@ function header() {
             </ul>
           </li>
           <li className={style.navbar__item}>
-            <Link href="/" className={style.navbar__link}>
+            <a href="#offers" className={style.navbar__link}>
               Special Offers
-            </Link>
+            </a>
           </li>
         </ul>
         <ul className={style.navbar__utility}>
@@ -132,7 +132,12 @@ function header() {
           </li>
           <li className={style.navbar__item}>
             <a className={style.navbar__link}>
-              <ShoppingCartOutlinedIcon />
+              <ShoppingCartOutlinedIcon className={style.cartIcon} />
+              {cartCount > 0 ? (
+                <p className={style.cartCounter}>{cartCount}</p>
+              ) : (
+                ""
+              )}
             </a>
           </li>
         </ul>
