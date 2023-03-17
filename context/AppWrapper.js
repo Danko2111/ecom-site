@@ -5,6 +5,7 @@ const AppContext = createContext();
 export function AppWrapper({ children }) {
   const [cart, setCart] = useState([]);
   const [qty, setQty] = useState(1);
+  const [cartOpen, setCartOpen] = useState(false);
 
   //on component mount get localstorage data for cartitems and set it to global state.
   useEffect(() => {
@@ -61,6 +62,8 @@ export function AppWrapper({ children }) {
         setQty,
         incQty,
         decQty,
+        cartOpen,
+        setCartOpen,
       }}
     >
       {children}

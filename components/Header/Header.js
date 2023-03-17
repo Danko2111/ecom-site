@@ -8,8 +8,8 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useAppContext } from "@/context/AppWrapper";
 import style from "./Header.module.scss";
 
-function header() {
-  const { cart } = useAppContext();
+function Header() {
+  const { cart, setCartOpen } = useAppContext();
 
   return (
     <header className={style.header}>
@@ -134,14 +134,17 @@ function header() {
             </a>
           </li>
           <li className={style.navbar__item}>
-            <a className={style.navbar__link}>
+            <div
+              className={style.navbar__link}
+              onClick={() => setCartOpen(true)}
+            >
               <ShoppingCartOutlinedIcon className={style.cartIcon} />
               {cart.length > 0 ? (
                 <p className={style.cartCounter}>{cart.length}</p>
               ) : (
                 ""
               )}
-            </a>
+            </div>
           </li>
         </ul>
       </nav>
@@ -149,4 +152,4 @@ function header() {
   );
 }
 
-export default header;
+export default Header;

@@ -1,5 +1,3 @@
-import Footer from "@/components/footer/footer";
-import Header from "@/components/header/header";
 import Head from "next/head";
 import { AppWrapper } from "../context/AppWrapper";
 import "@/styles/globals.css";
@@ -14,10 +12,8 @@ export default function App({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AppWrapper>
-        <Header />
         <Component {...pageProps} />
       </AppWrapper>
-      <Footer />
     </>
   );
 }
