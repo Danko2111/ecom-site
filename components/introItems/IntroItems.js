@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import IntroItem from "../introItem/IntroItem";
+import ItemCard from "@/components/itemCard/ItemCard";
 import style from "./IntroItems.module.scss";
 
 function IntroItems({ handleCartUpdate }) {
@@ -128,11 +128,7 @@ function IntroItems({ handleCartUpdate }) {
         {itemsArr
           .filter((item) => item.category.includes(categorySort))
           .map((item, i) => (
-            <IntroItem
-              key={i}
-              item={item}
-              handleCartUpdate={handleCartUpdate}
-            />
+            <ItemCard key={i} item={item} handleCartUpdate={handleCartUpdate} />
           ))}
       </ul>
     </section>

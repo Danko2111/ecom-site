@@ -1,12 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import itemImage from "../../assets/images/shorts.jpeg";
-import style from "./IntroItem.module.scss";
+import { useAppContext } from "../../context/AppWrapper";
+import style from "./ItemCard.module.scss";
 
-function IntroItem({ item, handleCartUpdate }) {
-  const buttonClickHandler = () => {
-    handleCartUpdate(item);
-  };
+function ItemCard({ item }) {
+  const { addItem } = useAppContext();
   return (
     <li className={style.item}>
       <div className={style.item__itemWrapper}>
@@ -18,12 +17,12 @@ function IntroItem({ item, handleCartUpdate }) {
         <p className={style.item__subtitle}>Shop Now</p>
         <p className={style.item__name}>{item.name}</p>
         <p className={style.item__price}>${item.price}</p>
-        <button className={style.item__button} onClick={buttonClickHandler}>
-          add to cart
+        <button className={style.item__button} onClick={() => addItem(item, 1)}>
+          Add to cart
         </button>
       </div>
     </li>
   );
 }
 
-export default IntroItem;
+export default ItemCard;

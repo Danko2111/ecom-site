@@ -1,0 +1,48 @@
+.controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem 2rem 1rem 4rem;
+  border-right: 1px solid rgba(175, 174, 174, 0.722);
+
+  &__title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  &__control {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-top: 1rem;
+  }
+  &__subtitle {
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+  &__controlList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    overflow-y: scroll;
+    height: 125px;
+    width: 175px;
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+      width: 7px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background-color: rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+    }
+  }
+  &__controlItem {
+    cursor: pointer;
+    &:hover {
+      color: #f1a759;
+    }
+  }
+}

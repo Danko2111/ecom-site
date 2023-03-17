@@ -5,9 +5,14 @@ import logo from "../../assets/logo/Apparel.svg";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { useAppContext } from "@/context/AppWrapper";
+import { useEffect } from "react";
 import style from "./Header.module.scss";
 
-function header({ cartCount }) {
+function header() {
+  //on component mount get cartData from localstorage and update cart state var
+  const { cart, setCart } = useAppContext();
+
   return (
     <header className={style.header}>
       <nav className={style.navbar}>
@@ -72,7 +77,7 @@ function header({ cartCount }) {
             </ul>
           </li>
           <li className={style.navbar__item}>
-            <Link href="/" className={style.navbar__link}>
+            <Link href="/products" className={style.navbar__link}>
               Products
               <KeyboardArrowDownIcon
                 fontSize="small"
@@ -133,8 +138,8 @@ function header({ cartCount }) {
           <li className={style.navbar__item}>
             <a className={style.navbar__link}>
               <ShoppingCartOutlinedIcon className={style.cartIcon} />
-              {cartCount > 0 ? (
-                <p className={style.cartCounter}>{cartCount}</p>
+              {cart.length > 0 ? (
+                <p className={style.cartCounter}>{cart.length}</p>
               ) : (
                 ""
               )}
