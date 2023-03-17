@@ -6,12 +6,10 @@ import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useAppContext } from "@/context/AppWrapper";
-import { useEffect } from "react";
 import style from "./Header.module.scss";
 
 function header() {
-  //on component mount get cartData from localstorage and update cart state var
-  const { cart, setCart } = useAppContext();
+  const { cart } = useAppContext();
 
   return (
     <header className={style.header}>

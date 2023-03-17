@@ -6,26 +6,31 @@ export function AppWrapper({ children }) {
   const [cart, setCart] = useState([]);
   const [qty, setQty] = useState(1);
 
-  //   useEffect(() => {
-  //     setCart(JSON.parse(localStorage.getItem("cart")));
-  //   }, []);
+  //on component mount get localstorage data for cartitems and set it to global state.
+  useEffect(() => {
+    const cartData = localStorage.getItem("cartItems");
+    if (cartData) {
+      setCart(JSON.parse(cartData));
+    }
+  }, []);
 
   //function to handle user updating cart with new items and also setting the cart data to localstorage to retain cart info if user leaves site.
   const addItem = (newItem, qty) => {
-    if (cart.find((item) => item.id === newItem.id)) {
+    if (cart.find((item) => item.id == newItem.id)) {
       let newCartData = cart.map((item) => {
-        if (item.id === newItem.id) {
+        if (item.id == newItem.id) {
           return { ...item, quantity: item.quantity + qty };
+        } else {
+          return item;
         }
       });
-      localStorage.setItem("cart", JSON.stringify(newCartData));
       setCart(newCartData);
+      localStorage.setItem("cartItems", JSON.stringify(newCartData));
     } else {
       newItem.quantity = qty;
-      let newCartData = [...cart, newItem];
-      localStorage.setItem("cart", JSON.stringify(newCartData));
+      const newCartData = [...cart, newItem];
       setCart((prevCart) => [...prevCart, newItem]);
-      console.log("test");
+      localStorage.setItem("cartItems", JSON.stringify(newCartData));
     }
   };
 
@@ -33,7 +38,7 @@ export function AppWrapper({ children }) {
     if (cart.find((item) => item.id === newItem.id)) {
       newCartData = cart.filter((item) => item.id !== itemId);
       setCart(newCartData);
-      localStorage.setItem("cart", JSON.stringify(newCartData));
+      localStorage.setItem("cartItems", JSON.stringify(newCartData));
     }
   };
 
