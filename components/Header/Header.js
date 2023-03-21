@@ -11,6 +11,14 @@ import style from "./Header.module.scss";
 function Header() {
   const { cart, setCartOpen } = useAppContext();
 
+  let cartTotal = 0;
+
+  if (cart.length > 0) {
+    cartTotal = cart
+      .map((item) => item.quantity)
+      .reduce((items, item) => items + item);
+  }
+
   return (
     <header className={style.header}>
       <nav className={style.navbar}>
@@ -140,7 +148,7 @@ function Header() {
             >
               <ShoppingCartOutlinedIcon className={style.cartIcon} />
               {cart.length > 0 ? (
-                <p className={style.cartCounter}>{cart.length}</p>
+                <p className={style.cartCounter}>{cartTotal}</p>
               ) : (
                 ""
               )}
