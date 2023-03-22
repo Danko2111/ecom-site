@@ -9,11 +9,11 @@
 }
 .form {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+
   gap: 2rem;
   &textWrapper {
     display: flex;
-    flex-direction: column;
   }
   &__title {
     text-transform: uppercase;
