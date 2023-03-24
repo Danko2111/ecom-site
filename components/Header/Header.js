@@ -32,11 +32,6 @@ function Header() {
         <ul className={style.navbar__links}>
           <li className={style.navbar__item}>
             <Link href="/" className={style.navbar__link}>
-              Home
-            </Link>
-          </li>
-          <li className={style.navbar__item}>
-            <Link href="/" className={style.navbar__link}>
               Collections
               <KeyboardArrowDownIcon
                 fontSize="small"
@@ -142,10 +137,7 @@ function Header() {
             </a>
           </li>
           <li className={style.navbar__item}>
-            <div
-              className={style.navbar__link}
-              onClick={() => setCartOpen(true)}
-            >
+            <div className={style.cart} onClick={() => setCartOpen(true)}>
               <ShoppingCartOutlinedIcon className={style.cartIcon} />
               {cart.length > 0 ? (
                 <p className={style.cartCounter}>{cartTotal}</p>
