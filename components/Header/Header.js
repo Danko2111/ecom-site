@@ -16,19 +16,21 @@ function Header() {
   if (cart.length > 0) {
     cartTotal = cart
       .map((item) => item.quantity)
-      .reduce((items, item) => items + item);
+      .reduce((items, item) => parseInt(items) + parseInt(item));
   }
 
   return (
     <header className={style.header}>
       <nav className={style.navbar}>
-        <Link href="/" className={style.navbar__logoLink}>
-          <Image
-            src={logo}
-            alt="Site Logo"
-            className={style.navbar__image}
-          ></Image>
-        </Link>
+        <div className={style.navbar__logoLinkWrapper}>
+          <Link href="/" className={style.navbar__logoLink}>
+            <Image
+              src={logo}
+              alt="Site Logo"
+              className={style.navbar__image}
+            ></Image>
+          </Link>
+        </div>
         <ul className={style.navbar__links}>
           <li className={style.navbar__item}>
             <Link href="/" className={style.navbar__link}>
@@ -41,7 +43,7 @@ function Header() {
             <ul className={style.navbar__dropdownList}>
               <li className={style.navbar__dropdownItem}>
                 <Link href="/">
-                  Summer{" "}
+                  Summer
                   <KeyboardArrowDownIcon
                     fontSize="small"
                     className={style.navbar__dropdownArrow}
@@ -50,7 +52,7 @@ function Header() {
               </li>
               <li className={style.navbar__dropdownItem}>
                 <Link href="/">
-                  Winter{" "}
+                  Winter
                   <KeyboardArrowDownIcon
                     fontSize="small"
                     className={style.navbar__dropdownArrow}
@@ -68,7 +70,70 @@ function Header() {
               </li>
               <li className={style.navbar__dropdownItem}>
                 <Link href="/">
-                  Apparel{" "}
+                  Apparel
+                  <KeyboardArrowDownIcon
+                    fontSize="small"
+                    className={style.navbar__dropdownArrow}
+                  />
+                </Link>
+              </li>
+              <li className={style.navbar__dropdownItem}>
+                <Link href="/">
+                  All Sports
+                  <KeyboardArrowDownIcon
+                    fontSize="small"
+                    className={style.navbar__dropdownArrow}
+                  />
+                </Link>
+              </li>
+              <li className={style.navbar__dropdownItem}>
+                <Link href="/">
+                  Basketball
+                  <KeyboardArrowDownIcon
+                    fontSize="small"
+                    className={style.navbar__dropdownArrow}
+                  />
+                </Link>
+              </li>
+              <li className={style.navbar__dropdownItem}>
+                <Link href="/">
+                  Football
+                  <KeyboardArrowDownIcon
+                    fontSize="small"
+                    className={style.navbar__dropdownArrow}
+                  />
+                </Link>
+              </li>
+              <li className={style.navbar__dropdownItem}>
+                <Link href="/">
+                  Training & Gym
+                  <KeyboardArrowDownIcon
+                    fontSize="small"
+                    className={style.navbar__dropdownArrow}
+                  />
+                </Link>
+              </li>
+              <li className={style.navbar__dropdownItem}>
+                <Link href="/">
+                  Running
+                  <KeyboardArrowDownIcon
+                    fontSize="small"
+                    className={style.navbar__dropdownArrow}
+                  />
+                </Link>
+              </li>
+              <li className={style.navbar__dropdownItem}>
+                <Link href="/">
+                  Tennis
+                  <KeyboardArrowDownIcon
+                    fontSize="small"
+                    className={style.navbar__dropdownArrow}
+                  />
+                </Link>
+              </li>
+              <li className={style.navbar__dropdownItem}>
+                <Link href="/">
+                  Golf
                   <KeyboardArrowDownIcon
                     fontSize="small"
                     className={style.navbar__dropdownArrow}
@@ -88,7 +153,7 @@ function Header() {
             <ul className={style.navbar__dropdownList}>
               <li className={style.navbar__dropdownItem}>
                 <Link href="/">
-                  Footwear{" "}
+                  All Clothing
                   <KeyboardArrowDownIcon
                     fontSize="small"
                     className={style.navbar__dropdownArrow}
@@ -97,7 +162,7 @@ function Header() {
               </li>
               <li className={style.navbar__dropdownItem}>
                 <Link href="/">
-                  Accessories{" "}
+                  Hoodies & Sweatshirts
                   <KeyboardArrowDownIcon
                     fontSize="small"
                     className={style.navbar__dropdownArrow}
@@ -106,7 +171,7 @@ function Header() {
               </li>
               <li className={style.navbar__dropdownItem}>
                 <Link href="/">
-                  Tops{" "}
+                  Tracksuits
                   <KeyboardArrowDownIcon
                     fontSize="small"
                     className={style.navbar__dropdownArrow}
@@ -115,7 +180,43 @@ function Header() {
               </li>
               <li className={style.navbar__dropdownItem}>
                 <Link href="/">
-                  Bottoms{" "}
+                  Jackets
+                  <KeyboardArrowDownIcon
+                    fontSize="small"
+                    className={style.navbar__dropdownArrow}
+                  />
+                </Link>
+              </li>
+              <li className={style.navbar__dropdownItem}>
+                <Link href="/">
+                  Trousers & Tights
+                  <KeyboardArrowDownIcon
+                    fontSize="small"
+                    className={style.navbar__dropdownArrow}
+                  />
+                </Link>
+              </li>
+              <li className={style.navbar__dropdownItem}>
+                <Link href="/">
+                  Tops & T-Shirts
+                  <KeyboardArrowDownIcon
+                    fontSize="small"
+                    className={style.navbar__dropdownArrow}
+                  />
+                </Link>
+              </li>
+              <li className={style.navbar__dropdownItem}>
+                <Link href="/">
+                  Shorts
+                  <KeyboardArrowDownIcon
+                    fontSize="small"
+                    className={style.navbar__dropdownArrow}
+                  />
+                </Link>
+              </li>
+              <li className={style.navbar__dropdownItem}>
+                <Link href="/">
+                  Kits & Jerseys
                   <KeyboardArrowDownIcon
                     fontSize="small"
                     className={style.navbar__dropdownArrow}
@@ -124,7 +225,7 @@ function Header() {
               </li>
             </ul>
           </li>
-          <li className={style.navbar__item}>
+          <li className={style.navbar__itemSimple}>
             <a href="#offers" className={style.navbar__link}>
               Special Offers
             </a>

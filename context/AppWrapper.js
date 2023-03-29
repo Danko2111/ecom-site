@@ -36,19 +36,23 @@ export function AppWrapper({ children }) {
   };
 
   const removeItem = (itemId) => {
-    if (cart.find((item) => item.id === newItem.id)) {
-      newCartData = cart.filter((item) => item.id !== itemId);
+    if (cart.find((item) => item.id === itemId)) {
+      const newCartData = cart.filter((item) => item.id !== itemId);
       setCart(newCartData);
       localStorage.setItem("cartItems", JSON.stringify(newCartData));
     }
   };
 
-  const incQty = () => {
-    setQty((prevQty) => prevQty + 1);
-  };
-
-  const decQty = () => {
-    setQty((prevQty) => prevQty - 1);
+  const changeQty = (newQty, itemId) => {
+    const newCartData = cart.map((item) => {
+      if (item.id == itemId) {
+        return { ...item, quantity: newQty };
+      } else {
+        return item;
+      }
+    });
+    setCart(newCartData);
+    localStorage.setItem("cartItems", JSON.stringify(newCartData));
   };
 
   return (
@@ -60,8 +64,7 @@ export function AppWrapper({ children }) {
         setCart,
         qty,
         setQty,
-        incQty,
-        decQty,
+        changeQty,
         cartOpen,
         setCartOpen,
       }}

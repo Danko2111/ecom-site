@@ -1,0 +1,68 @@
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  width: 100%;
+}
+
+.image {
+  width: 200px;
+  object-fit: cover;
+}
+
+.itemInfo {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.5rem 0;
+}
+
+.itemBrand {
+  color: grey;
+}
+.size {
+  margin-top: 0.4rem;
+}
+
+.itemTitle {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+.itemPrice {
+  margin: auto 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-left: auto;
+}
+.eachPrice,
+.size {
+  font-size: 0.9rem;
+}
+
+.functions {
+  margin-top: auto;
+  display: flex;
+  gap: 2rem;
+}
+.qtySelect {
+  width: 25%;
+  padding: 0.2rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.removeButton {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid grey;
+  color: grey;
+  padding: 0;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: auto;
+  &:hover {
+    color: #f1a759;
+    border-bottom: 1px solid #f1a759;
+  }
+}
