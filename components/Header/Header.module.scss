@@ -164,3 +164,16 @@
   align-items: center;
   justify-content: center;
 }
+
+.hamburgerWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.patty {
+  background-color: white;
+  width: 20px;
+  height: 2px;
+  border-radius: 5px;
+}
